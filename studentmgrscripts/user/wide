@@ -1,0 +1,15 @@
+#!/bin/bash
+echo Preparing Go Environment
+go get -u github.com/visualfc/gotools
+go get -u github.com/nsf/gocode
+echo ...done
+echo Preparing Online IDE
+cd ~/wide
+rm -f ~/wide/conf/users/`whoami`.json || true
+/usr/local/bin/wideuser -u `whoami` -p {{.Password}} -e  {{.Email}}
+echo ...done
+echo Starting IDE
+systemctl --user start wide.service
+echo ...done
+echo IDE available at https://students.brianketelsen.com/`whoami`
+echo IDE will close when you log out.

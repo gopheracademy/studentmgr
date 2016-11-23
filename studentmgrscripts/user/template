@@ -1,0 +1,5 @@
+students.brianketelsen.com/USERNAME {
+	proxy / 127.0.0.1:3UID/USERNAME {
+		websocket
+	}
+}

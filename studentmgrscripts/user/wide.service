@@ -1,0 +1,9 @@
+[Unit]
+Description=WIDE IDE
+
+[Service]
+WorkingDirectory=/home/{{.Username}}/wide
+ExecStart=/home/{{.Username}}/bin/wide -channel wss://students.brianketelsen.com/{{.Username}} -conf %h/wide/conf/wide.json -ip 127.0.0.1 -port 3{{.UID}} -context /{{.Username}}
+
+[Install]
+WantedBy=default.target
